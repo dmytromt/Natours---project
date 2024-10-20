@@ -1,135 +1,14 @@
-$color-primary-blue: #054c5fc7;
-$color-primary-dark: #052630c7;
-$color-primary-light: #085665d6;
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-$color-grey-dark: #777;
-$color-white: #fff;
-$color-black: #000;
+@import "base/base";
+@import "base/animation";
+@import "base/utilities";
+@import "base/typography";
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "components/button";
 
-html {
-  font-size: 62.5%;
-}
+@import "layout/header";
 
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: $color-grey-dark;
-  padding: 3rem;
-}
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
-    url(/img/hero.jpg);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  position: relative;
-
-  &__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-  }
-
-  &__logo {
-    height: 3.5rem;
-  }
-
-  &__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-}
-
-.heading-primary {
-  color: $color-white;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-
-  &--main {
-    display: block;
-    font-weight: 400;
-    font-size: 6rem;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out;
-  }
-
-  &--sub {
-    display: block;
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-  }
-}
-
-@keyframes moveInLeft {
-  0% {
-    transform: translateX(-10rem);
-    opacity: 0;
-  }
-  80% {
-    transform: translateX(2rem);
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    transform: translateX(10rem);
-    opacity: 0;
-  }
-  80% {
-    transform: translateX(-2rem);
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.btn {
-  &:link,
-  &:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.2s;
-  }
-
-  &:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-  }
-
-  &:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
-  }
-
-  &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-  }
-}
+@import "pages/home";
